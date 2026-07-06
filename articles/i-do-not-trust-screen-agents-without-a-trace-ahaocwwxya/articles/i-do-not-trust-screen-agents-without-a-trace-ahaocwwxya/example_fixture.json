@@ -1,0 +1,6 @@
+{
+    "ui_elements": ["Avatar", "Edit", "Settings"],
+    "selected_object": "Avatar",
+    "user_context": "profile_page",
+    "uncertainty": false
+}
