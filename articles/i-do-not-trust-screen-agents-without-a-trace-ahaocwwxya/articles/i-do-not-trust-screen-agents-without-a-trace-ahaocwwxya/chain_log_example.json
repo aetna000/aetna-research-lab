@@ -1,0 +1,35 @@
+{
+  "step": 1,
+  "type": "pre_action_screen",
+  "screen": {
+    "ui_elements": ["Avatar", "Edit", "Settings"],
+    "selected_object": "Avatar",
+    "user_context": "profile_page",
+    "uncertainty": false
+  }
+}
+{
+  "step": 2,
+  "type": "agent_decision",
+  "inferred_intent": "Edit Profile",
+  "intent_evidence": "Edit",
+  "selected_action": {
+    "type": "click",
+    "target_element": "Edit",
+    "evidence": "Edit"
+  },
+  "action_evidence": "Edit",
+  "confidence": 0.98
+}
+{
+  "step": 3,
+  "type": "post_action_screen",
+  "screen": {
+    "ui_elements": ["Avatar", "Edit", "Settings", "Edit Form"],
+    "selected_object": "Avatar",
+    "user_context": "profile_page",
+    "uncertainty": false,
+    "last_action": "edit_opened"
+  },
+  "outcome_evidence": ["Avatar", "Edit", "Settings", "Edit Form"]
+}
