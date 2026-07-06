@@ -1,45 +1,28 @@
 # aetna-research-lab
-Reference implementation for I Do Not Trust Screen Agents Without a Trace
+Reference code for evidence-chain evaluation: tracing screen, intent, action, and outcome for trustworthy multimodal agents.
 ## Article
 I Do Not Trust Screen Agents Without a Trace
 The product bottleneck for multimodal agents is not action generation; it is evidence that makes the action trustworthy.
 ## Purpose
-The Article proposes an algorithmic evaluation method that benefits from a small reference implementation.
+The Article proposes an evidence-chain evaluation benchmark for multimodal screen agents, specifying a concrete evaluation method (capture UI state, infer intent, cite evidence, record action, and compare post-action outcome). To build trust and give readers a real inspection target, a minimal public code artifact is warranted: a harness that logs each step, structures the evidence chain, and simulates at least one dummy agent action with replayable evidence trace. No claims of end-to-end produc
 ## Generated Notes
-Reference implementation for I Do Not Trust Screen Agents Without a Trace
+Reference code for evidence-chain evaluation: tracing screen, intent, action, and outcome for trustworthy multimodal agents.
 ## Article
 I Do Not Trust Screen Agents Without a Trace
 The product bottleneck for multimodal agents is not action generation; it is evidence that makes the action trustworthy.
 ## Purpose
-The Article proposes an algorithmic evaluation method that benefits from a small reference implementation.
-## Generated Notes
-Research prototype for an Aetna X Article.
-
-This repository contains a minimal evidence-chain evaluator for trustworthy multimodal agent workflows. It does not prove an agent is safe. It gives researchers and builders a small starting point for recording what an agent saw, what it inferred, what it did, and what changed.
-
-## Run
-
-```bash
-python3 evidence_chain_eval.py examples/sample_trace.json
-```
-
+The Article proposes an evidence-chain evaluation benchmark for multimodal screen agents, specifying a concrete evaluation method (capture UI state, infer intent, cite evidence, record action, and compare post-action outcome). To build trust and give readers a real inspection target, a minimal public code artifact is warranted: a harness that logs each step, structures the evidence chain, and simulates at least one dummy agent action with replayable evidence trace. No claims of end-to-end produc
 ## Files
-
-- `evidence_chain_eval.py`: scores a JSON action trace for evidence completeness.
-- `examples/sample_trace.json`: toy trace format.
-
-## Status
-
-Research prototype. Review and adapt before using in production.
-## Files
-- `README.md`: Repository overview and run instructions.
-- `evidence_chain_eval.py`: Minimal evidence-chain scoring script.
-- `examples/sample_trace.json`: Toy example of the evidence-chain trace schema.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/README.md`: Explain the benchmark harness, usage, and evaluation flow for evidence-chain logging.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/evidence_chain.py`: Implements the minimal evidence-chain evaluation harness as described in the Article.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/example_fixture.json`: Provides a fixture for a pre-action UI screen state for the harness to consume.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/chain_log_example.json`: Shows a sample output of a complete evidence-chain log for one agent step.
 ## Status
 Research prototype. It is public for inspection, critique, and reuse. It should not be treated as production safety proof without independent validation.
 ## Files
-- `README.md`: Repository overview and run instructions.
-- `evidence_chain_eval.py`: Minimal evidence-chain scoring script.
-- `examples/sample_trace.json`: Toy example of the evidence-chain trace schema.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/README.md`: Explain the benchmark harness, usage, and evaluation flow for evidence-chain logging.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/evidence_chain.py`: Implements the minimal evidence-chain evaluation harness as described in the Article.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/example_fixture.json`: Provides a fixture for a pre-action UI screen state for the harness to consume.
+- `articles/i-do-not-trust-screen-agents-without-a-trace-ahaocwwxya/chain_log_example.json`: Shows a sample output of a complete evidence-chain log for one agent step.
 ## Status
 Research prototype. It is public for inspection, critique, and reuse. It should not be treated as production safety proof without independent validation.
