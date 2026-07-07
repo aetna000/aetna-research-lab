@@ -1,0 +1,22 @@
+{
+  "steps": [
+    {
+      "screen_image": "screens/start.png",
+      "ui_structure": {"button": "Login", "fields": ["username", "password"]},
+      "inferred_intent": "User wants to log in.",
+      "action": "Click 'Login' button",
+      "rationale": "User likely finished entering credentials.",
+      "outcome_label": "Navigated to dashboard.",
+      "next_screen_image": "screens/dashboard.png"
+    },
+    {
+      "screen_image": "screens/dashboard.png",
+      "ui_structure": {"nav": ["Profile", "Settings"]},
+      "inferred_intent": "User aims to view settings.",
+      "action": "Click 'Settings' tab",
+      "rationale": "Recent login suggests user wants account preferences.",
+      "outcome_label": "Settings page loaded.",
+      "next_screen_image": "screens/settings.png"
+    }
+  ]
+}
