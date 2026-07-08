@@ -1,0 +1,38 @@
+[
+  {
+    "step": 1,
+    "claim": "User requested account data from main dashboard UI",
+    "evidence": "screenshot_dashboard.png",
+    "evidence_type": "observation",
+    "memory_read": null,
+    "permission": "read:account_data",
+    "action": "retrieve_account_data",
+    "expected_outcome": "account data populated",
+    "observed_outcome": "account data populated",
+    "boundary_failures": []
+  },
+  {
+    "step": 2,
+    "claim": "Inferred user wants to export data, no explicit instruction visible",
+    "evidence": null,
+    "evidence_type": "inference",
+    "memory_read": null,
+    "permission": null,
+    "action": "export_account_data",
+    "expected_outcome": "export prompt shown",
+    "observed_outcome": "export prompt not shown",
+    "boundary_failures": []
+  },
+  {
+    "step": 3,
+    "claim": "Accessed prior session memory across user boundary",
+    "evidence": "session_memory_id_1234",
+    "evidence_type": "memory",
+    "memory_read": "other_user_session",
+    "permission": "read:session_memory",
+    "action": "suggest_personalized_tip",
+    "expected_outcome": "tip based on this user",
+    "observed_outcome": "tip based on other user's data",
+    "boundary_failures": []
+  }
+]
