@@ -1,0 +1,30 @@
+[
+  {
+    "step_name": "check_price",
+    "claim": "Price is $49.99",
+    "evidence": {"source": "screenshot_section_3", "value": "$49.99"},
+    "claim_type": "observation",
+    "memory_state": {
+      "keys_accessed": ["cart_total"],
+      "age_seconds": 10
+    },
+    "permission_boundary": ["read", "calculate_total"],
+    "action_proposed": "read",
+    "expected_outcome": "Store price $49.99 as current_price",
+    "post_action_observation": {"status": "success", "current_price": 49.99}
+  },
+  {
+    "step_name": "apply_discount",
+    "claim": "Customer is eligible for 10% off",
+    "evidence": {"source": "customer_profile", "value": "loyalty_tier: gold"},
+    "claim_type": "inference",
+    "memory_state": {
+      "keys_accessed": ["loyalty_tier", "discount_rules", "cart_total", "promo_code", "purchase_history", "last_login", "email", "phone", "address", "shipping_pref", "payment_method"],
+      "age_seconds": 400
+    },
+    "permission_boundary": ["read"],
+    "action_proposed": "apply_discount",
+    "expected_outcome": "10% discount applied to cart total",
+    "post_action_observation": {"status": "unknown"}
+  }
+]
