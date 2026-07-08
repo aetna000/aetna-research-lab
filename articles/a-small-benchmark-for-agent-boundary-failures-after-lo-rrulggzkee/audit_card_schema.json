@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent Audit Card",
+  "type": "object",
+  "properties": {
+    "step_id": { "type": "string" },
+    "workflow_step": { "type": "string", "description": "Human-readable step label" },
+    "claim": { "type": "string", "description": "The user-visible claim being made at this step" },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "source_type": { "type": "string", "enum": ["ui", "memory", "tool", "external", "none"] },
+        "source_id": { "type": "string" },
+        "snippet": { "type": "string" }
+      },
+      "required": ["source_type"]
+    },
+    "claim_type": { "type": "string", "enum": ["observation", "inference", "preference", "instruction", "permission", "outcome"] },
+    "proposed_action": { "type": "string" },
+    "action_risk": { "type": "string", "enum": ["low", "medium", "high"] },
+    "permission_boundary": { "type": "string" },
+    "expected_outcome": { "type": "string" },
+    "post_action_state": { "type": "string" },
+    "boundary_failures": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "missing_evidence",
+          "stale_state",
+          "ambiguous_intent",
+          "permission_gap",
+          "unverifiable_outcome",
+          "over_broad_memory_use"
+        ]
+      }
+    },
+    "final_success": { "type": "boolean" }
+  },
+  "required": ["step_id","workflow_step","claim","evidence","claim_type","proposed_action","action_risk","permission_boundary","expected_outcome","post_action_state","boundary_failures","final_success"]
+}
