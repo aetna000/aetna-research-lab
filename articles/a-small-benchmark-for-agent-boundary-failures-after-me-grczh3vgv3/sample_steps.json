@@ -1,0 +1,22 @@
+[
+  {
+    "step_id": "1",
+    "claim": "User wants to book flight on Aug 20",
+    "evidence_type": "inference",
+    "evidence_source": "previous message",
+    "proposed_action": "search for flights Aug 20",
+    "permission_boundary": "search only",
+    "expected_outcome": "return list of flights",
+    "post_action_state": "list displayed"
+  },
+  {
+    "step_id": "2",
+    "claim": "Lowest price is $250",
+    "evidence_type": "observation",
+    "evidence_source": "screenshot",
+    "proposed_action": "confirm booking",
+    "permission_boundary": "booking requires manual approval",
+    "expected_outcome": "booking submitted",
+    "post_action_state": "booking pending"
+  }
+]
