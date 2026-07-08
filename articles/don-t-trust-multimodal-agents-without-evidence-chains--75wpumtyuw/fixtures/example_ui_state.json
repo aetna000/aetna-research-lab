@@ -1,0 +1,5 @@
+[
+  {"screen_id": "login", "elements": [{"type": "input", "label": "username", "filled": true}, {"type": "button", "label": "Sign In", "enabled": true}]},
+  {"screen_id": "dashboard", "elements": [{"type": "icon", "label": "bell", "badge": false}]},
+  {"screen_id": "dashboard.notifications", "elements": [{"type": "panel", "label": "notifications", "visible": true}]}
+]
