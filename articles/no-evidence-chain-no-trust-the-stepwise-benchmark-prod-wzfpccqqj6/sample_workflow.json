@@ -1,0 +1,47 @@
+{
+  "workflow_id": "demo-login",
+  "screens": [
+    {
+      "step_id": 1,
+      "screen_raw": "login_screen.png",
+      "ui": {
+        "elements": [
+          {"id": "btn_1", "type": "button", "label": "Sign In"},
+          {"id": "txt_1", "type": "textbox", "label": "Email"}
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "screen_raw": "home_screen.png",
+      "ui": {
+        "elements": [
+          {"id": "lbl_1", "type": "label", "label": "Welcome, user!"}
+        ]
+      }
+    }
+  ],
+  "ground_truth": [
+    {
+      "intent": "User wants to log in by entering email and clicking Sign In.",
+      "intent_evidence": [
+        {"description": "Sign In button present.", "ui_element_id": "btn_1"},
+        {"description": "Email textbox present.", "ui_element_id": "txt_1"}
+      ],
+      "action": "Click 'Sign In' button after entering email.",
+      "action_evidence": [
+        {"description": "'Sign In' button is the only actionable element.", "ui_element_id": "btn_1"}
+      ],
+      "outcome": "Transition to home screen."
+    },
+    {
+      "intent": "Verify login was successful.",
+      "intent_evidence": [
+        {"description": "Welcome message is visible.", "ui_element_id": "lbl_1"}
+      ],
+      "action": "None (no interaction).",
+      "action_evidence": [],
+      "outcome": "User sees welcome message."
+    }
+  ]
+}
