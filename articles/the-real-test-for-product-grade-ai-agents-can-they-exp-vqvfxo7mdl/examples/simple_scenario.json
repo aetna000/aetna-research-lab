@@ -1,0 +1,31 @@
+{
+  "steps": [
+    {
+      "screen_state": {
+        "screenshot_id": "screen1",
+        "desc": "Login page"
+      },
+      "ui_elements": [
+        {"id": "el1", "label": "Username Field", "bbox": [20, 80, 150, 30]},
+        {"id": "el2", "label": "Submit Button", "bbox": [200, 80, 120, 40]}
+      ],
+      "post_action_state": {
+        "screenshot_id": "screen2",
+        "desc": "Login loading spinner"
+      }
+    },
+    {
+      "screen_state": {
+        "screenshot_id": "screen2",
+        "desc": "Login loading spinner"
+      },
+      "ui_elements": [
+        {"id": "el3", "label": "Cancel Button", "bbox": [10, 200, 100, 30]}
+      ],
+      "post_action_state": {
+        "screenshot_id": "screen3",
+        "desc": "Return to login page"
+      }
+    }
+  ]
+}
