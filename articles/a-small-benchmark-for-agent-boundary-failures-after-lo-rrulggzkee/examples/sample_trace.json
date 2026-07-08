@@ -1,0 +1,56 @@
+[
+  {
+    "step_id": "1",
+    "workflow_step": "Extract task name from screen UI",
+    "claim": "The task name shown is: 'Submit TPS report'",
+    "evidence": {
+      "source_type": "ui",
+      "source_id": "screen_01",
+      "snippet": "TextBox('Submit TPS report')"
+    },
+    "claim_type": "observation",
+    "proposed_action": "Log extracted task name",
+    "action_risk": "low",
+    "permission_boundary": "read-only",
+    "expected_outcome": "Task name is logged",
+    "post_action_state": "Log entry created",
+    "boundary_failures": [],
+    "final_success": true
+  },
+  {
+    "step_id": "2",
+    "workflow_step": "Infer due date from memory",
+    "claim": "Due date is: 2024-07-10",
+    "evidence": {
+      "source_type": "memory",
+      "source_id": "memory_42",
+      "snippet": "deadline: 2024-07-10"
+    },
+    "claim_type": "inference",
+    "proposed_action": "Schedule reminder for deadline",
+    "action_risk": "medium",
+    "permission_boundary": "alerts",
+    "expected_outcome": "Reminder is set",
+    "post_action_state": "Alert created",
+    "boundary_failures": ["stale_state"],
+    "final_success": false
+  },
+  {
+    "step_id": "3",
+    "workflow_step": "Send approved email",
+    "claim": "Ready to email manager",
+    "evidence": {
+      "source_type": "instruction",
+      "source_id": "user_cmd",
+      "snippet": "User approved send"
+    },
+    "claim_type": "permission",
+    "proposed_action": "Send email",
+    "action_risk": "high",
+    "permission_boundary": "external_communication",
+    "expected_outcome": "Manager receives email",
+    "post_action_state": "Email not delivered",
+    "boundary_failures": ["unverifiable_outcome","ambiguous_intent"],
+    "final_success": false
+  }
+]
