@@ -1,0 +1,22 @@
+[
+  {
+    "pre_action_screen": {"screen_id": "login", "elements": [{"type": "input", "label": "username", "filled": true}, {"type": "button", "label": "Sign In", "enabled": true}]},
+    "inferred_intent": "Submit login",
+    "intent_evidence": ["Button: \"Sign In\"", "Input: username"],
+    "action": "Click \"Sign In\"",
+    "action_rationale": "All required fields are filled; submit is enabled.",
+    "post_action_screen": {"screen_id": "dashboard", "elements": [{"type": "icon", "label": "bell", "badge": false}]},
+    "outcome_diff": "screen moved to dashboard",
+    "breakdown_label": null
+  },
+  {
+    "pre_action_screen": {"screen_id": "dashboard", "elements": [{"type": "icon", "label": "bell", "badge": false}]},
+    "inferred_intent": "Open notifications",
+    "intent_evidence": ["Bell icon present, no badge"],
+    "action": "Click bell icon",
+    "action_rationale": "User typically checks notifications after login.",
+    "post_action_screen": {"screen_id": "dashboard.notifications", "elements": [{"type": "panel", "label": "notifications", "visible": true}]},
+    "outcome_diff": "notification panel shown",
+    "breakdown_label": null
+  }
+]
