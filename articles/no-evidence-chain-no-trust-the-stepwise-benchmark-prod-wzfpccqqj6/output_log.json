@@ -1,0 +1,49 @@
+{
+  "workflow_id": "demo-login",
+  "steps": [
+    {
+      "step_id": 1,
+      "screen_raw": "login_screen.png",
+      "parsed_ui": {
+        "elements": [
+          {"id": "btn_1", "type": "button", "label": "Sign In"},
+          {"id": "txt_1", "type": "textbox", "label": "Email"}
+        ]
+      },
+      "focus": null,
+      "ambiguities": null,
+      "intent": "User wants to log in by entering email and clicking Sign In.",
+      "intent_evidence": [
+        {"description": "Sign In button present.", "region": null, "ui_element_id": "btn_1", "text": null, "extra": {}},
+        {"description": "Email textbox present.", "region": null, "ui_element_id": "txt_1", "text": null, "extra": {}}
+      ],
+      "action": "Click 'Sign In' button after entering email.",
+      "action_rationale": "Click 'Sign In' button after entering email.",
+      "action_evidence": [
+        {"description": "'Sign In' button is the only actionable element.", "region": null, "ui_element_id": "btn_1", "text": null, "extra": {}}
+      ],
+      "outcome": "Transition to home screen.",
+      "outcome_diff": null
+    },
+    {
+      "step_id": 2,
+      "screen_raw": "home_screen.png",
+      "parsed_ui": {
+        "elements": [
+          {"id": "lbl_1", "type": "label", "label": "Welcome, user!"}
+        ]
+      },
+      "focus": null,
+      "ambiguities": null,
+      "intent": "Verify login was successful.",
+      "intent_evidence": [
+        {"description": "Welcome message is visible.", "region": null, "ui_element_id": "lbl_1", "text": null, "extra": {}}
+      ],
+      "action": "None (no interaction).",
+      "action_rationale": "None (no interaction).",
+      "action_evidence": [],
+      "outcome": "User sees welcome message.",
+      "outcome_diff": null
+    }
+  ]
+}
