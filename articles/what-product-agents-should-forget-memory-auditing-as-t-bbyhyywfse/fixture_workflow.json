@@ -1,0 +1,53 @@
+[
+  {
+    "step_idx": 1,
+    "ui_state_id": "27edd616c87b",
+    "ui_parse": {"fields": ["username", "password"], "btn": "login"},
+    "screen": "login.png",
+    "timestamp": "2026-07-05T20:00:01Z",
+    "added_memories": [
+      {"id": "52cf4fd5e03a", "content": "user: alice", "source_ui_id": "27edd616c87b", "timestamp": "2026-07-05T20:00:02Z"}
+    ],
+    "removed_memories": [],
+    "action": {
+      "type": "fill_form",
+      "params": {"fields": {"username":"alice"}},
+      "cited_memories": ["52cf4fd5e03a"],
+      "rationale": "Fills username"
+    }
+  },
+  {
+    "step_idx": 2,
+    "ui_state_id": "3214b8a75604",
+    "ui_parse": {"widgets": ["stats", "log out"]},
+    "screen": "dashboard.png",
+    "timestamp": "2026-07-05T20:00:03Z",
+    "added_memories": [
+      {"id": "90a1bee36c5b", "content": "session_token:abc", "source_ui_id": "3214b8a75604", "timestamp": "2026-07-05T20:00:04Z"}
+    ],
+    "removed_memories": [],
+    "action": {
+      "type": "navigate",
+      "params": {"to": "stats"},
+      "cited_memories": ["90a1bee36c5b"],
+      "rationale": "Uses session token"
+    }
+  },
+  {
+    "step_idx": 3,
+    "ui_state_id": "817e46cb5bdb",
+    "ui_parse": {"info": "logged out"},
+    "screen": "logout.png",
+    "timestamp": "2026-07-05T20:00:05Z",
+    "added_memories": [],
+    "removed_memories": [
+      {"id": "90a1bee36c5b", "content": "session_token:abc", "source_ui_id": "3214b8a75604", "timestamp": "2026-07-05T20:00:06Z", "rationale": "explicit user logout, privacy"}
+    ],
+    "action": {
+      "type": "noop",
+      "params": {},
+      "cited_memories": [],
+      "rationale": "User logged out, cleared memory"
+    }
+  }
+]
