@@ -1,0 +1,48 @@
+{
+  "retrievals": [
+    {
+      "step_id": "step_1",
+      "timestamp_query": "2024-06-20T13:00:00",
+      "timestamp_response": "2024-06-20T13:00:00.200",
+      "user_id": "user_a",
+      "session_id": "sess_1",
+      "retrieval_query": "customer X address?",
+      "retrieved_fragment": "123 Main St",
+      "provenance": {"screen_hash": "abc123", "data_id": "addr_x", "source_time": "2024-06-20T12:59:59"},
+      "boundary_label": "in-bounds"
+    },
+    {
+      "step_id": "step_2",
+      "timestamp_query": "2024-06-20T13:01:00",
+      "timestamp_response": "2024-06-20T13:01:01.200",
+      "user_id": "user_a",
+      "session_id": "sess_2",
+      "retrieval_query": "user_b draft note",
+      "retrieved_fragment": "internal memo...",
+      "provenance": {"screen_hash": "def456", "data_id": "note_b", "source_time": "2024-06-20T13:00:55"},
+      "boundary_label": "cross-user"
+    },
+    {
+      "step_id": "step_3",
+      "timestamp_query": "2024-06-20T13:02:10",
+      "timestamp_response": "2024-06-20T13:02:12.500",
+      "user_id": "user_a",
+      "session_id": "sess_2",
+      "retrieval_query": "latest status",
+      "retrieved_fragment": "status: done",
+      "provenance": {"screen_hash": "ghi789", "data_id": "task_z", "source_time": "2024-06-19T10:00:00"},
+      "boundary_label": "stale"
+    },
+    {
+      "step_id": "step_4",
+      "timestamp_query": "2024-06-20T13:03:00",
+      "timestamp_response": "2024-06-20T13:03:00.020",
+      "user_id": "user_a",
+      "session_id": "sess_2",
+      "retrieval_query": "recalled nothing",
+      "retrieved_fragment": "",
+      "provenance": {},
+      "boundary_label": "missing"
+    }
+  ]
+}
