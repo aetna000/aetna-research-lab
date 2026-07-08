@@ -1,0 +1,55 @@
+{
+  "step_id": "1",
+  "timestamp": "2024-06-07T10:00:00Z",
+  "query": "Get user email",
+  "intended_scope": "user",
+  "provenance": "user_db/42",
+  "permission": "allowed",
+  "outcome": "HIT",
+  "latency_ms": 800,
+  "user_id": "u123"
+}
+{
+  "step_id": "2",
+  "timestamp": "2024-06-07T10:00:02Z",
+  "query": "Fetch recent session activity",
+  "intended_scope": "session",
+  "provenance": "session_log/20240607/xyz",
+  "permission": "allowed",
+  "outcome": "HIT",
+  "latency_ms": 1200,
+  "user_id": "u123"
+}
+{
+  "step_id": "3",
+  "timestamp": "2024-06-07T10:00:05Z",
+  "query": "Get admin notes",
+  "intended_scope": "user",
+  "provenance": "admin_db/9001",
+  "permission": "denied",
+  "outcome": "CROSS-BOUNDARY",
+  "latency_ms": 1000,
+  "user_id": "u123"
+}
+{
+  "step_id": "4",
+  "timestamp": "2024-06-07T10:00:07Z",
+  "query": "Find archived info",
+  "intended_scope": "user",
+  "provenance": "archive_db/003",
+  "permission": "undetermined",
+  "outcome": "OMIT",
+  "latency_ms": null,
+  "user_id": "u123"
+}
+{
+  "step_id": "5",
+  "timestamp": "2024-06-07T10:00:09Z",
+  "query": "Lookup user address",
+  "intended_scope": "user",
+  "provenance": "user_db/42",
+  "permission": "allowed",
+  "outcome": "ERROR",
+  "latency_ms": 6000,
+  "user_id": "u123"
+}
