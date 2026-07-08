@@ -1,0 +1,89 @@
+{
+  "workflow_name": "customer_support_agent_example",
+  "description": "Simplified example of an agent answering a customer query with annotated must-recall facts.",
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "greeting and intent detection",
+      "required_facts": [
+        {
+          "fact_id": "cust_name",
+          "description": "retrieve customer's preferred name from profile",
+          "expected_root_cause": "index_miss",
+          "product_impact": "minor"
+        },
+        {
+          "fact_id": "policy_cancel",
+          "description": "retrieve cancellation policy snippet for agent to offer flat rate",
+          "expected_root_cause": "scoring_error",
+          "product_impact": "critical"
+        }
+      ],
+      "retrieved_contexts": [
+        {"fact_id": "cust_name", "source": "user_profile", "score": 0.9}
+      ]
+    },
+    {
+      "step_id": 2,
+      "action": "validate discount eligibility",
+      "required_facts": [
+        {
+          "fact_id": "loyalty_tier",
+          "description": "customer loyalty tier from CRM",
+          "expected_root_cause": "index_miss",
+          "product_impact": "critical"
+        }
+      ],
+      "retrieved_contexts": []
+    },
+    {
+      "step_id": 3,
+      "action": "look up next available agent",
+      "required_facts": [
+        {
+          "fact_id": "schedule_block",
+          "description": "next available time slot",
+          "expected_root_cause": "scoring_error",
+          "product_impact": "minor"
+        },
+        {
+          "fact_id": "agent_pref",
+          "description": "preferred language of customer",
+          "expected_root_cause": "context_dropout",
+          "product_impact": "minor"
+        }
+      ],
+      "retrieved_contexts": [
+        {"fact_id": "schedule_block", "source": "calendar", "score": 0.7}
+      ]
+    },
+    {
+      "step_id": 4,
+      "action": "compose response with discount",
+      "required_facts": [
+        {
+          "fact_id": "discount_code",
+          "description": "generated discount code from promotion engine",
+          "expected_root_cause": "pipeline_path_miss",
+          "product_impact": "critical"
+        }
+      ],
+      "retrieved_contexts": []
+    },
+    {
+      "step_id": 5,
+      "action": "confirm resolution",
+      "required_facts": [
+        {
+          "fact_id": "satisfaction_survey",
+          "description": "last survey result for sentiment context",
+          "expected_root_cause": "unknown",
+          "product_impact": "minor"
+        }
+      ],
+      "retrieved_contexts": [
+        {"fact_id": "satisfaction_survey", "source": "surveys", "score": 0.4}
+      ]
+    }
+  ]
+}
