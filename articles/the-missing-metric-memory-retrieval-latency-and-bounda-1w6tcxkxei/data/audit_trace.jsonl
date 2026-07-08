@@ -1,0 +1,3 @@
+{"query": "reset user password", "latency_ms": 0, "retrieved_content": "reset user password", "retrieved_user": "alice", "retrieved_session": "sess1", "screen_hash": "screenA", "memory_timestamp": 1717100000.0, "boundary_violation": false, "violation_type": null}
+{"query": "set server config", "latency_ms": 0, "retrieved_content": "set server config", "retrieved_user": "bob", "retrieved_session": "sess2", "screen_hash": "screenB", "memory_timestamp": 1717101000.0, "boundary_violation": true, "violation_type": "user"}
+{"query": "nonexistent fragment", "latency_ms": 0, "retrieved_content": null, "retrieved_user": null, "retrieved_session": null, "screen_hash": null, "memory_timestamp": null, "boundary_violation": false, "violation_type": "distractor"}
