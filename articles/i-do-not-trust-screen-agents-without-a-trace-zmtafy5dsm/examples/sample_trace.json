@@ -1,0 +1,15 @@
+{
+  "pre_action_screen_state": "Settings page shows notifications disabled.",
+  "visible_evidence": [
+    "Toggle labeled Email notifications is off",
+    "User account is active"
+  ],
+  "inferred_user_intent": "Enable email notifications for this account.",
+  "selected_action": "Click the Email notifications toggle.",
+  "evidence_links": [
+    "Toggle label matches requested setting",
+    "Off state is visible before action"
+  ],
+  "post_action_state": "Email notifications toggle is on.",
+  "observed_outcome": "The setting changed from off to on."
+}
