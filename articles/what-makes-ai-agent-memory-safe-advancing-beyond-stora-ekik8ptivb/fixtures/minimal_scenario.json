@@ -1,0 +1,8 @@
+{
+  "steps": [
+    { "retrieval": { "query": "Fetch summary for doc #42", "query_type": "in_session", "session_id": "sess-aaa", "provenance": {"src": "user-1"}, "policy_context": {"role": "user"}, "memory_fragment": "Summary of doc #42" } },
+    { "retrieval": { "query": "Fetch secret note from sess-bbb", "query_type": "cross_session", "session_id": "sess-aaa", "provenance": {"src": "user-1"}, "policy_context": {"role": "user"}, "memory_fragment": "Top secret note" } },
+    { "retrieval": { "query": "Fetch possibly-shared calendar", "query_type": "ambiguous", "session_id": "sess-aaa", "provenance": {"src": "user-2"}, "policy_context": {"role": "user"}, "memory_fragment": "Calendar invite" } },
+    { "retrieval": { "query": "Fetch decoy/support KB", "query_type": "distractor", "session_id": "sess-aaa", "provenance": {"src": "support-bot"}, "policy_context": {"role": "user"}, "memory_fragment": "Red herring data" } }
+  ]
+}
