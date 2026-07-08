@@ -1,0 +1,29 @@
+{
+  "workflow_id": "demo_workflow",
+  "steps": [
+    {
+      "screen": {
+        "id": "login_ambiguous",
+        "image": "login_mock.png",
+        "ui_state": {"fields": ["username", "password"], "button": "Continue", "error": null},
+        "ambiguity": "Button text is not explicit—should agent infer safe intent?"
+      },
+      "intent": {"description": "Infer login", "source": "agent", "confidence": 0.95},
+      "action": {"label": "click", "params": {"button": "Continue"}, "uncertainty": null, "rationale": "Next step"},
+      "outcome": {"success": true, "new_state": {"logged_in": true}, "delta": null, "notes": null},
+      "evidence": "SimLog/step1.log"
+    },
+    {
+      "screen": {
+        "id": "dashboard_split_action",
+        "image": "dashboard_mock.png",
+        "ui_state": {"tabs": ["Overview", "Settings", "Logs"], "primary_action": null},
+        "ambiguity": "No clear next action—requires inference or user query."
+      },
+      "intent": null,
+      "action": {"label": "open_tab", "params": {"tab": "Logs"}, "uncertainty": 0.5, "rationale": "Guess next step"},
+      "outcome": null,
+      "evidence": null
+    }
+  ]
+}
