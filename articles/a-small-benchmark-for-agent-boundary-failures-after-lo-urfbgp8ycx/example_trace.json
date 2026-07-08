@@ -1,0 +1,36 @@
+{
+  "steps": [
+    {
+      "claim": "User wants to schedule a meeting for next Monday at 10am",
+      "evidence_type": "observation",
+      "evidence_source": "UI text field 'schedule meeting'",
+      "action_justified": "Create calendar event",
+      "expected_outcome": "Event appears in calendar",
+      "post_action_observation": "Event created successfully",
+      "permission_boundary": "Calendar write access granted",
+      "memory_scope": "session",
+      "memory_access_permission": true
+    },
+    {
+      "claim": "User prefers vegetarian restaurants",
+      "evidence_type": "preference",
+      "evidence_source": "User profile",
+      "action_justified": "Filter restaurant list to vegetarian",
+      "expected_outcome": "Only vegetarian options shown",
+      "post_action_observation": "Filtered list shows 3 restaurants",
+      "intent_verification": false,
+      "memory_scope": "user",
+      "memory_access_permission": true
+    },
+    {
+      "claim": "Delete all logs from last week",
+      "evidence_type": "instruction",
+      "evidence_source": "Chat message",
+      "action_justified": "DELETE /logs endpoint",
+      "expected_outcome": "Logs deleted",
+      "post_action_observation": "403 Forbidden",
+      "permission_boundary": "Read-only user role",
+      "memory_scope": "system"
+    }
+  ]
+}
