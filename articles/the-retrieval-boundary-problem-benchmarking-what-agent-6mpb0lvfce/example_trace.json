@@ -1,0 +1,35 @@
+{
+  "trace_id": "demo_trace_001",
+  "steps": [
+    {
+      "step_id": 1,
+      "timestamp": "2024-06-12T12:34:56Z",
+      "context": { "user": "user1", "session": "sess1", "permission": "user1" },
+      "retrieval_events": [
+        {"item_id": "A", "source": "user-session", "used": true, "omitted": false, "omission_reason": null},
+        {"item_id": "B", "source": "common", "used": true, "omitted": false, "omission_reason": null},
+        {"item_id": "C", "source": "user-session", "used": false, "omitted": true, "omission_reason": "excluded by boundary: user1"}
+      ],
+      "boundary_event": null,
+      "agent_action": "took action for user1",
+      "notes": null
+    },
+    {
+      "step_id": 2,
+      "timestamp": "2024-06-12T12:35:01Z",
+      "context": { "user": "user2", "session": "sess2", "permission": "user2" },
+      "retrieval_events": [
+        {"item_id": "A", "source": "user-session", "used": false, "omitted": true, "omission_reason": "excluded by boundary: user2"},
+        {"item_id": "B", "source": "common", "used": true, "omitted": false, "omission_reason": null},
+        {"item_id": "C", "source": "user-session", "used": true, "omitted": false, "omission_reason": null}
+      ],
+      "boundary_event": {
+        "event_type": "user_switch",
+        "details": {"from": "user1", "to": "user2"},
+        "timestamp": "2024-06-12T12:35:01Z"
+      },
+      "agent_action": "took action for user2: must NOT retrieve user1 memory",
+      "notes": null
+    }
+  ]
+}
