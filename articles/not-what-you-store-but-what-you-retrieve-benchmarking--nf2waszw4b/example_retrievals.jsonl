@@ -1,0 +1,44 @@
+{
+  "timestamp": "2024-06-07T21:36:01Z",
+  "step_id": "wf-17a3",
+  "query": "What is the patient's latest temperature?",
+  "declared_boundary": "user:alice, session:s1, tool:notes",
+  "provenance": "file:notes_s1.json, hash:9a08bc",
+  "user_hash": "alice",
+  "session_hash": "s1",
+  "latency_ms": 123,
+  "outcome": "HIT"
+}
+{
+  "timestamp": "2024-06-07T21:37:00Z",
+  "step_id": "wf-17a4",
+  "query": "What is the patient's diagnosis?",
+  "declared_boundary": "user:alice, session:s1, tool:notes",
+  "provenance": "file:diagnosis_s2.json, hash:f35a21",
+  "user_hash": "alice",
+  "session_hash": "s1",
+  "latency_ms": 205,
+  "outcome": "CROSS"
+}
+{
+  "timestamp": "2024-06-07T21:38:16Z",
+  "step_id": "wf-17a5",
+  "query": "Show last nurse interaction.",
+  "declared_boundary": "user:alice, session:s1, tool:chat",
+  "provenance": "",
+  "user_hash": "alice",
+  "session_hash": "s1",
+  "latency_ms": 178,
+  "outcome": "MISS"
+}
+{
+  "timestamp": "2024-06-07T21:39:01Z",
+  "step_id": "wf-17a6",
+  "query": "Recent prescription activity?",
+  "declared_boundary": "user:bob, session:s2, tool:notes",
+  "provenance": "file:notes_s2.json, hash:5d97fe",
+  "user_hash": "bob",
+  "session_hash": "s2",
+  "latency_ms": 150,
+  "outcome": "HIT"
+}
