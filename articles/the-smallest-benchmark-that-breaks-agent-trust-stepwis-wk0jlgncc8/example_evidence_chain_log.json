@@ -1,0 +1,28 @@
+[
+  {
+    "step_id": 0,
+    "pre_screen": "login_screen_v1.png",
+    "ui_map": {"fields": ["username", "password"], "buttons": ["Login", "Help"]},
+    "intent": "Enter username/password to log in.",
+    "evidence_refs": ["field:username", "field:password", "button:Login"],
+    "action": "Input creds, click Login",
+    "rationale": "Both fields are empty, user wants to access main app. 'Login' button is enabled.",
+    "post_screen": "main_screen_v1.png",
+    "outcome_diff": "Login successful, main UI loaded",
+    "attribution": "test_agent",
+    "failure": null
+  },
+  {
+    "step_id": 1,
+    "pre_screen": "main_screen_v1.png",
+    "ui_map": {"buttons": ["Compose Email", "Inbox", "Logout"]},
+    "intent": "Open compose window to draft a new email.",
+    "evidence_refs": ["button:Compose Email"],
+    "action": "Click 'Compose Email'",
+    "rationale": "'Compose Email' button is visible and enabled, next required workflow step.",
+    "post_screen": "compose_window_v1.png",
+    "outcome_diff": "Compose window opened",
+    "attribution": "test_agent",
+    "failure": null
+  }
+]
