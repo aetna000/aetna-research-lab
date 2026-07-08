@@ -1,0 +1,28 @@
+{
+  "step_id": 1,
+  "query": "Retrieve user address for checkout",
+  "intended_boundary": "user-123-session-1015",
+  "provenance": "userdb/v3/address-123.txt",
+  "timestamp": "2024-06-08T11:33:55.124Z",
+  "latency_ms": 45,
+  "outcome": "HIT"
+}
+{
+  "step_id": 2,
+  "query": "Recall payment token",
+  "intended_boundary": "user-123-session-1015",
+  "provenance": "deleted/payment-2022.txt",
+  "timestamp": "2024-06-08T11:34:15.612Z",
+  "latency_ms": 101,
+  "outcome": "MISS"
+}
+{
+  "step_id": 3,
+  "query": "Get onboarding message for user-999",
+  "intended_boundary": "user-123-session-1015",
+  "provenance": "user-999/onboard.txt",
+  "timestamp": "2024-06-08T11:34:39.116Z",
+  "latency_ms": 32,
+  "outcome": "CROSS",
+  "ground_truth_boundary": "user-999-session-881"
+}
