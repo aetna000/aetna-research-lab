@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "RBAEvent",
+    "type": "object",
+    "properties": {
+        "query": { "type": "string", "description": "Retrieval query in NL or structured" },
+        "intent_scope": { "type": "object", "description": "Intended memory boundary: user/session/tool/UI", "additionalProperties": {"type": "string"} },
+        "provenance": { "type": "object", "description": "Source, UI-hash, document id, hash" },
+        "latency_ms": { "type": "integer", "description": "Retrieval latency (milliseconds)" },
+        "workflow": { "type": "object", "description": "Workflow context: step id, timestamp", "properties": {
+            "step_id": { "type": "string" },
+            "timestamp_iso": { "type": "string", "format": "date-time" }
+        }, "required": ["step_id", "timestamp_iso"] },
+        "outcome": { "type": "string", "enum": ["HIT", "OMISSION", "CROSS-BOUNDARY", "AMBIGUOUS", "ERROR"] },
+        "notes": { "type": "string" }
+    },
+    "required": ["query", "intent_scope", "provenance", "latency_ms", "workflow", "outcome"]
+}
