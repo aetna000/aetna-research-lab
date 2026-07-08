@@ -1,0 +1,27 @@
+{
+  "query": "fetch user X's doc A",
+  "intent_scope": {"user": "X", "session": "S1"},
+  "provenance": {"source": "doc:A", "ui_hash": "abc"},
+  "latency_ms": 45,
+  "workflow": {"step_id": "12", "timestamp_iso": "2024-06-20T15:32:00Z"},
+  "outcome": "CROSS-BOUNDARY",
+  "notes": "Crossed user boundary"
+}
+{
+  "query": "fetch session S1 preferences",
+  "intent_scope": {"user": "X", "session": "S1"},
+  "provenance": {"source": "prefs:S1", "ui_hash": "def"},
+  "latency_ms": 30,
+  "workflow": {"step_id": "13", "timestamp_iso": "2024-06-20T15:32:05Z"},
+  "outcome": "HIT",
+  "notes": "Correct session"
+}
+{
+  "query": "fetch doc B for user Z",
+  "intent_scope": {"user": "Z", "session": "S2"},
+  "provenance": {"source": "doc:B", "ui_hash": "zzz"},
+  "latency_ms": 50,
+  "workflow": {"step_id": "14", "timestamp_iso": "2024-06-20T15:32:09Z"},
+  "outcome": "OMISSION",
+  "notes": "Should have been retrieved but missed"
+}
