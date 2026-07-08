@@ -1,0 +1,24 @@
+{
+  "task_name": "simple_login_flow",
+  "screens": [
+    {
+      "screen_id": "login_1",
+      "screen_image": "login_screen.png",
+      "ui_elements": [
+        { "id": "username", "type": "textbox", "label": "Username" },
+        { "id": "password", "type": "textbox", "label": "Password" },
+        { "id": "login_btn", "type": "button", "label": "Login" }
+      ],
+      "ambiguity": "username field is pre-filled; should agent overwrite or proceed?"
+    },
+    {
+      "screen_id": "login_fail_2",
+      "screen_image": "login_failed.png",
+      "ui_elements": [
+        { "id": "error_msg", "type": "text", "label": "Incorrect password." },
+        { "id": "retry_btn", "type": "button", "label": "Retry" }
+      ],
+      "ambiguity": "Error state, must infer from non-obvious UI feedback."
+    }
+  ]
+}
