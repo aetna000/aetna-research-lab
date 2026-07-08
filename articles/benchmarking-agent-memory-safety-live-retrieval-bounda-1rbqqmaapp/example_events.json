@@ -1,0 +1,56 @@
+[
+  {
+    "query": "get user profile",
+    "intended_boundary": "user",
+    "provenance": "users/123.json, step=1, ts=2024-01-02T10:00:00Z",
+    "outcome": "HIT",
+    "latency_ms": 12.3,
+    "workflow_step_id": "step-01",
+    "timestamp": "2024-01-02T10:00:00Z"
+  },
+  {
+    "query": "retrieve last session state",
+    "intended_boundary": "session",
+    "provenance": "",
+    "outcome": "MISS",
+    "latency_ms": 8.1,
+    "workflow_step_id": "step-02",
+    "timestamp": "2024-01-02T10:00:01Z"
+  },
+  {
+    "query": "get billing address",
+    "intended_boundary": "user",
+    "provenance": "users/999.json, cross-user fetch",
+    "outcome": "CROSS_BOUNDARY",
+    "latency_ms": 45.2,
+    "workflow_step_id": "step-03",
+    "timestamp": "2024-01-02T10:00:02Z"
+  },
+  {
+    "query": "should fetch permission set but skipped",
+    "intended_boundary": "tool",
+    "provenance": "",
+    "outcome": "OMISSION",
+    "latency_ms": 0.0,
+    "workflow_step_id": "step-04",
+    "timestamp": "2024-01-02T10:00:03Z"
+  },
+  {
+    "query": "malformed lookup",
+    "intended_boundary": "session",
+    "provenance": "",
+    "outcome": "ERROR",
+    "latency_ms": 2.3,
+    "workflow_step_id": "step-05",
+    "timestamp": "2024-01-02T10:00:04Z"
+  },
+  {
+    "query": "get UI state",
+    "intended_boundary": "screen_ui",
+    "provenance": "screenshots/step06.png, hash=abc123",
+    "outcome": "HIT",
+    "latency_ms": 15.7,
+    "workflow_step_id": "step-06",
+    "timestamp": "2024-01-02T10:00:05Z"
+  }
+]
