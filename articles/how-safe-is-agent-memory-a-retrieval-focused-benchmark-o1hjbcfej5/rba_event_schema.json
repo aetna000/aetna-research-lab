@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Retrieval Boundary Audit Event",
+  "type": "object",
+  "properties": {
+    "step_id": { "type": "string", "description": "Unique workflow step or action ID" },
+    "user_id": { "type": "string", "description": "User, session, or instance identifier (can be hashed)" },
+    "query": { "type": "string", "description": "Retrieval query (natural or structured)" },
+    "retrieval_scope": { "type": "string", "enum": ["user", "session", "tool", "screen"], "description": "Memory scope for the retrieval" },
+    "provenance": { "type": "string", "description": "Source evidence: filename, UI hash, or pointer" },
+    "timestamp": { "type": "string", "format": "date-time", "description": "Retrieval time" },
+    "outcome": { "type": "string", "enum": ["HIT", "MISS", "OMISSION", "CROSS-BOUNDARY", "ERROR"], "description": "Retrieval outcome" },
+    "latency_ms": { "type": "number", "description": "Retrieval latency in milliseconds" }
+  },
+  "required": ["step_id", "user_id", "query", "retrieval_scope", "provenance", "timestamp", "outcome", "latency_ms"]
+}
