@@ -1,0 +1,52 @@
+[
+  {
+    "step_id": "step_001",
+    "user_id": "user_a",
+    "query": "fetch last user message",
+    "retrieval_scope": "user",
+    "provenance": "chat_23:msg_045",
+    "timestamp": "2024-06-09T15:01:01Z",
+    "outcome": "HIT",
+    "latency_ms": 32
+  },
+  {
+    "step_id": "step_002",
+    "user_id": "user_a",
+    "query": "fetch confidential doc section",
+    "retrieval_scope": "user",
+    "provenance": "doc_12:sec_private",
+    "timestamp": "2024-06-09T15:01:05Z",
+    "outcome": "CROSS-BOUNDARY",
+    "latency_ms": 53
+  },
+  {
+    "step_id": "step_003",
+    "user_id": "user_b",
+    "query": "fetch previous email",
+    "retrieval_scope": "session",
+    "provenance": "email_57:thread_091",
+    "timestamp": "2024-06-09T15:01:12Z",
+    "outcome": "HIT",
+    "latency_ms": 46
+  },
+  {
+    "step_id": "step_004",
+    "user_id": "user_c",
+    "query": "fetch onboarding notes",
+    "retrieval_scope": "user",
+    "provenance": "note:onboarding",
+    "timestamp": "2024-06-09T15:01:15Z",
+    "outcome": "OMISSION",
+    "latency_ms": 40
+  },
+  {
+    "step_id": "step_005",
+    "user_id": "user_b",
+    "query": "fetch UI action context",
+    "retrieval_scope": "screen",
+    "provenance": "screen_hash:abc123",
+    "timestamp": "2024-06-09T15:01:25Z",
+    "outcome": "ERROR",
+    "latency_ms": 77
+  }
+]
